@@ -1,0 +1,151 @@
+/* Estilos actualizados para la disposición de los paneles y el panel de términos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Altura de la cabecera */
+    background-color: #6f8da1ab; /* Color de fondo para la cabecera */
+    box-shadow: 0 2px 4px rgba(145, 132, 132, 0.1); /* Sombra suave */
+    z-index: 1000; /* Asegurar que esté por encima del contenido */
+    padding: 10px 20px; /* Espaciado interno */
+    display: flex; /* Para alinear elementos horizontalmente */
+    align-items: center; /* Para centrar verticalmente */
+}
+
+/* Estilos para el título */
+header h1 {
+    margin: 0; /* Elimina el margen por defecto */
+    color: #fff; /* Color del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra suave para el texto */
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+    animation: fadeIn 1s ease-in-out;
+}
+
+main {
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.panel-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.panel {
+    width: 200px;
+    height: 150px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.panel:hover {
+    transform: scale(1.05);
+}
+
+.video-container {
+    display: none;
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 20px auto; /* Centra el contenedor horizontalmente */
+    max-width: 800px;
+    width: 100%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Estilos para el footer fijo */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    text-align: center;
+    z-index: 1000; /* Asegurar que esté por encima del resto del contenido */
+}
+
+.footer-content {
+    display: inline-block;
+}
+
+/* Estilos para el modal flotante de términos y condiciones */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1100; /* Asegurar que esté por encima del footer */
+    overflow-y: auto; /* Permitir desplazamiento vertical si el contenido es más largo que la ventana */
+    max-height: 80%; /* Altura máxima del modal */
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* Mostrar el modal cuando está activo */
+.modal.active {
+    display: block;
+}
+
+.copyright {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
